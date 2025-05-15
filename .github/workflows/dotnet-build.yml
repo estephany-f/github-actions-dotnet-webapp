@@ -1,0 +1,19 @@
+name: Meu Workflow
+
+on:
+  push:
+    branches:
+      - main 
+  schedule:
+    - cron: '0 * * * *'  # Executa a cada hora
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Mensagem
+        run: echo "Este Workflow foi acionado por push."
